@@ -1,0 +1,27 @@
+# Laravel core
+/vendor
+/node_modules
+
+# Environment
+.env
+.env.* 
+
+# Logs & cache
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Build files (optional but recommended)
+/public/hot
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode
+.idea
+
+# Database (IMPORTANT)
+/database/database.sqlite

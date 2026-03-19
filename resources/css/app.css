@@ -1,0 +1,569 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   SIDEBAR LINKS
+   =============================== */
+
+.sidebar-link {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    background: rgba(113, 82, 2, 0.392);
+    backdrop-filter: blur(2px);
+}
+
+.sidebar-link:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.sidebar-link.is-active {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.sidebar-link.is-active:hover {
+    background: rgba(113, 82, 2, 0.392);
+    color: #e5e7eb;
+}
+
+#sidebar:hover .sidebar-link.is-active {
+    background: rgba(113, 82, 2, 0.392);
+    color: #e5e7eb;
+}
+
+#sidebar:hover .sidebar-link.is-active:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* ===============================
+   ADMIN SAFE BODY FIX
+   =============================== */
+
+/* Keep top offset only for guest pages because navbar is fixed */
+body.guest-layout {
+    padding-top: 80px;
+}
+
+/* Remove any top gap on admin pages */
+body.admin-layout {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+body.admin-layout > .flex.min-h-screen.relative {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+body.admin-layout #main,
+body.admin-layout header {
+    margin-top: 0 !important;
+}
+
+canvas {
+    max-width: 100%;
+}
+
+/* =======================
+   NAVBAR (FIXED & VISIBLE)
+======================= */
+
+.guest-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 14px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+
+    /* 🌫️ GLASS EFFECT */
+    background: linear-gradient(
+        to top ,
+        rgba(2, 86, 97, 0.35),
+        rgba(85, 195, 209, 0.663)
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(5, 65, 100, 0.947);
+    box-shadow: 0 10px 35px rgba(2, 71, 113, 0.901);
+}
+
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/*.nav-logo:hover {
+    color: #f97316;
+} */
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #f97316;
+}
+
+.nav-actions .nav-btn {
+    padding: 8px 16px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 6px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.nav-actions .primary {
+    background: #f97316;
+    border-color: #f97316;
+}
+
+/* =======================
+   FULL PAGE BACKGROUND
+======================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+#home {
+    background:none;
+}
+
+/* =======================
+   HERO
+======================= */
+
+.guest-hero {
+    min-height: 100vh;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    display: none;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.28);
+    padding: 55px 35px;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.701);
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* =======================
+   SECTIONS
+======================= */
+
+.guest-section {
+    padding: 110px 20px;
+    text-align: center;
+    background: transparent;
+}
+
+.guest-section h2 {
+    font-size:2.4rem;
+    font-weight:bold;
+    margin-bottom: 22px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgba(220, 220, 220, 0.964);
+    box-shadow: 0 18px 40px rgba(9, 1, 63, 0.633);
+}
+
+.guest-section p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.08rem;
+    color: #f2f5cb;
+}
+
+/* =======================
+   FEATURE CARDS
+======================= */
+
+.text-center.bg-white,
+.text-center.dark\:bg-gray-800 {
+    background: rgba(15, 23, 42, 0.75) !important;
+    color: rgb(205, 212, 9) !important;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(154, 173, 4, 0.858);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-center.bg-white:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.633);
+}
+
+.nav-links a:hover {
+    color: #f97316;
+    text-shadow: 0 0 8px rgba(249,115,22,0.6);
+}
+
+/* AUTH BACKGROUND ONLY */
+.auth-bg{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+      linear-gradient(to bottom right, rgba(10,25,47,0.88), rgba(15,23,42,0.92)),
+      url("/images/hero2.jpg") no-repeat center center / cover;
+
+    background-attachment:fixed;
+}
+
+/* ===================== FOOTER ===================== */
+
+.site-footer {
+    background: rgb(1, 31, 94);
+    color: #000000;
+    padding-top: 80px;
+    margin-top: 100px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 0 20px 80px;
+}
+
+.office-box {
+    border: 1px solid #0ea5e9;
+    padding: 35px 25px 30px;
+    position: relative;
+    text-align: left;
+    background: radial-gradient(circle at top, rgba(14,165,233,0.08), transparent 60%);
+}
+
+.office-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.office-box p {
+    color: #697583;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.office-icon {
+    position: absolute;
+    top: -22px;
+    left: 25px;
+    background: rgb(0, 0, 0);
+    padding: 6px 10px;
+    border-radius: 50%;
+    border: 1px solid #0ea5e9;
+    font-size: 18px;
+}
+
+.footer-bottom {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 14px 10px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Student identity card and nav link styles */
+.student-card {
+    background: rgba(165, 136, 3, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(136, 134, 117, 0.51);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.nav-links li{
+    position:relative;
+}
+
+/* vertical separator */
+.nav-links li:not(:first-child)::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:3.5px;
+    height:25px;
+    background:orange;
+    opacity:0.8;
+    transition:0.8s;
+}
+
+/* hover effect */
+.nav-links li:hover::before{
+    background:linear-gradient(60deg,red,orange,yellow);
+}
+
+/* keep link styling */
+.nav-links a{
+    position:relative;
+    margin-left:35px;
+    text-decoration:none;
+    color:#cbd5e1;
+    font-weight:500;
+    font-size:15px;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    width:0;
+    height:2px;
+    background:linear-gradient(90deg, white, yellow, orange, yellow, white);
+    transition:width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after{
+    width:100%;
+}
+
+/* Academix logo in student layout*/
+.sidebar-logo img {
+    filter: brightness(1.15) contrast(1.2)
+            drop-shadow(0 0 8px rgba(244, 187, 16, 0.845));
+}
+.sidebar-logo img:hover {
+    filter: brightness(1.15) contrast(1.2)
+            drop-shadow(0 0 8px rgba(35, 219, 51, 0.953));
+}
+
+/* Academic logo in guest layout / home page */
+
+.logo-glow-item {
+    transition: all 0.3s ease;
+}
+
+.logo-glow-item {
+    filter: brightness(1.25) contrast(1.3)
+            drop-shadow(0 0 8px rgba(2, 126, 126, 0.408))
+            drop-shadow(0 0 18px rgba(4, 79, 100, 0.418))
+            drop-shadow(0 0 32px rgba(3, 95, 68, 0.4));
+}
+.logo-glow-item:hover {
+    filter: brightness(1.3) contrast(1.4)
+            drop-shadow(0 0 12px rgba(16, 216, 80, 0.674))
+            drop-shadow(0 0 28px rgba(216, 71, 39, 0.8));
+}
+
+/* Ensure admin form radios/checkboxes stay visible and clickable */
+.control-check {
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    width: 18px !important;
+    height: 18px !important;
+    cursor: pointer;
+    accent-color: #22c55e;
+}
+
+/* ===================== ADMIN LIQUID GLASS ===================== */
+body.admin-layout .bg-gray-800,
+body.admin-layout .dark\:bg-gray-800,
+body.admin-layout .bg-white.dark\:bg-gray-800,
+body.admin-layout .rounded-xl.bg-gray-800,
+body.admin-layout .overflow-x-auto.bg-gray-800,
+body.admin-layout table.bg-white.dark\:bg-gray-800 {
+    background: linear-gradient(
+        135deg,
+        rgba(10, 18, 46, 0.28),
+        rgba(16, 28, 60, 0.18)
+    ) !important;
+    backdrop-filter: blur(12px) saturate(130%);
+    -webkit-backdrop-filter: blur(12px) saturate(130%);
+    border: 1px solid rgba(230, 238, 255, 0.18) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24) !important;
+}
+
+body.admin-layout .border-gray-700,
+body.admin-layout tr.border-t,
+body.admin-layout tr.border-b,
+body.admin-layout thead.bg-gray-800 {
+    border-color: rgba(210, 224, 255, 0.2) !important;
+}
+
+body.admin-layout tr:hover,
+body.admin-layout .hover\:bg-gray-700\/40:hover,
+body.admin-layout .hover\:bg-gray-800:hover {
+    background: rgba(148, 163, 184, 0.14) !important;
+}
+
+body.admin-layout input,
+body.admin-layout select,
+body.admin-layout textarea {
+    background: rgba(8, 16, 40, 0.5) !important;
+    color: #e5e7eb !important;
+    border: 1px solid rgba(210, 224, 255, 0.24) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+body.admin-layout select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    padding-right: 2.5rem !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5-5 5 5'/%3E%3Cpath d='m7 14 5 5 5-5'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 14px 14px !important;
+}
+
+body.admin-layout select option {
+    color: #e5e7eb !important;
+    background: #0f172a !important;
+}
+
+body.admin-layout .admin-semester-select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    padding-right: 2.7rem !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5-5 5 5'/%3E%3Cpath d='m7 14 5 5 5-5'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.8rem center !important;
+    background-size: 14px 14px !important;
+}
+
+/* Consistent action button sizing in admin tables/pages */
+body.admin-layout .admin-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.9rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.1 !important;
+    border-radius: 0.5rem !important;
+    white-space: nowrap;
+}
+
+/* Normalize mixed admin action buttons across legacy pages */
+body.admin-layout main a[class*="bg-"][class*="rounded"],
+body.admin-layout main button[class*="bg-"][class*="rounded"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.875rem;
+    line-height: 1.1;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+}
+
+/* ===================== STUDENT LIQUID GLASS ===================== */
+body.student-layout .bg-gray-800,
+body.student-layout .dark\:bg-gray-800,
+body.student-layout .bg-white.dark\:bg-gray-800,
+body.student-layout .rounded-xl.bg-gray-800,
+body.student-layout .overflow-x-auto.bg-gray-800,
+body.student-layout table.bg-white.dark\:bg-gray-800 {
+    background: linear-gradient(
+        135deg,
+        rgba(10, 18, 46, 0.26),
+        rgba(16, 28, 60, 0.16)
+    ) !important;
+    backdrop-filter: blur(11px) saturate(128%);
+    -webkit-backdrop-filter: blur(11px) saturate(128%);
+    border: 1px solid rgba(220, 230, 255, 0.18) !important;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22) !important;
+}
+
+body.student-layout .border-gray-700,
+body.student-layout tr.border-t,
+body.student-layout tr.border-b,
+body.student-layout thead.bg-gray-700,
+body.student-layout thead.bg-gray-900 {
+    border-color: rgba(210, 224, 255, 0.18) !important;
+}
+
+body.student-layout tr:hover,
+body.student-layout .hover\:bg-gray-700\/40:hover,
+body.student-layout .hover\:bg-gray-800:hover {
+    background: rgba(148, 163, 184, 0.12) !important;
+}
+
+body.student-layout input,
+body.student-layout select,
+body.student-layout textarea {
+    background: rgba(8, 16, 40, 0.46) !important;
+    color: #e5e7eb !important;
+    border: 1px solid rgba(210, 224, 255, 0.22) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+body.student-layout select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    padding-right: 2.5rem !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5-5 5 5'/%3E%3Cpath d='m7 14 5 5 5-5'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 14px 14px !important;
+}
+
+body.student-layout select option {
+    color: #e5e7eb !important;
+    background: #0f172a !important;
+}

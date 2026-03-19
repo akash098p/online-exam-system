@@ -1,0 +1,41 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('exams', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('created_by');     // user id (admin or teacher)
+            $table->string('title');
+            $table->string('subject');
+            $table->text('description')->nullable();
+            $table->integer('duration_minutes');          // time limit
+            $table->integer('total_marks')->default(0);   // auto-calculated later
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
+            $table->enum('status', ['draft', 'published', 'closed'])->default('draft');
+            $table->timestamps();
+
+            // foreign key
+            $table->foreign('created_by')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('exams');
+    }
+};
