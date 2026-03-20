@@ -1,3 +1,6 @@
+<p align="center"><a href="https://i.postimg.cc/7hmZM26X/app-name.png" target="_blank"
+                      
+
 🚀 Academix — Smart Online Examination System
 
 "Laravel" (https://img.shields.io/badge/Laravel-10.x-red?style=for-the-badge&logo=laravel)
