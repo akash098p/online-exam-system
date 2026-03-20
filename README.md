@@ -1,6 +1,3 @@
-<p align="center"><a href="https://i.postimg.cc/7hmZM26X/app-name.png" target="_blank"
-                      
-
 ## 🚀 Academix — Smart Online Examination System
 
 <p align="center">
