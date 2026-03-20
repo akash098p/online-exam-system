@@ -3,10 +3,12 @@
 
 🚀 Academix — Smart Online Examination System
 
-"Laravel" (https://img.shields.io/badge/Laravel-10.x-red?style=for-the-badge&logo=laravel)
-"PHP" (https://img.shields.io/badge/PHP-8.x-blue?style=for-the-badge&logo=php)
-"License" (https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-"Status" (https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-10.x-red?logo=laravel&logoColor=white">
+  <img src="https://img.shields.io/badge/PHP-8.x-blue?logo=php&logoColor=white">
+  <img src="https://img.shields.io/badge/License-MIT-green">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen">
+</p>
 
 «Academix is a modern, secure, and scalable online examination platform designed for educational institutions.
 It provides real-time analytics, automated grading, and seamless exam management.»
